@@ -10,7 +10,11 @@ function [t_Total, dt, X_0, u_0] = Simulation_Parameters(Flapping)
         t_Total = strrep(input("Simulation time in second: ", "s"), ",", ".");  % [s]
         if ~isnan(str2double(t_Total)) && ~isempty(t_Total)
             t_Total = str2double(t_Total);
-            doContinue = false;
+            if t_Total <= 0
+                disp("Total simulation time must be a positive number.");
+            else
+                doContinue = false;
+            end
         elseif lower(t_Total) == "stop"
             error("Stop execution.")
         end
