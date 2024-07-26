@@ -7,6 +7,16 @@ function Post_Processing(out, nu, Wing)
 
     %% simulink chache
     slxcList = dir("*.slxc");
+    
+    movefile slprj Simulink_Cache;
+    for islxc = 1 : length(slxcList)
+        movefile(slxcList(islxc).name, "Simulink_Cache");
+    end
+    
+    cd Simulink_Cache
+    date = datetime("now", "Format", "yyyyMMdd_HH:mm");
+    movefile("slprj", "slprj_" + string(date));
+    cd ..
 
     %% colours
     % colours with Leonardo (url: https://github.com/adobe/leonardo) and
