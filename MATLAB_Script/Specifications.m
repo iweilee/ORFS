@@ -28,17 +28,17 @@ end
 disp(" ");
 
 %% wing
-Wing.b = 1.4;                          % [m]
-Wing.thickness = 0.001;                     % [m]
-Wing.S = 0.374;                             % [m^2]
-Wing.AR = Wing.b^2 / Wing.S;                % [-]
-Wing.dr = Wing.b / (2* Wing.num_Blade);     % [m]
-Wing.r = Wing.dr / 2 : Wing.dr : (Wing.b - Wing.dr) / 2;% [m]
-Wing.c = BE_Chord_Length(Wing.r, Wing.num_Blade);       % [m]
-Wing.dS = Wing.dr .* Wing.c;                % [m^2]
-Wing.MAC = sum(Wing.c .* Wing.dS) / sum(Wing.dS);        % [m]
-Wing.Position = [113.5; 0; 43.483];         % [mm]
-Wing.l = (Drone.CG - Wing.Position - [350* 0.25;0 ; 0]) / 1000;            % [m]
+Wing.b = 1.4;                                                       % [m]
+Wing.thickness = 0.001;                                             % [m]
+Wing.S = 0.374;                                                     % [m^2]
+Wing.AR = Wing.b^2 / Wing.S;                                        % [-]
+Wing.dr = Wing.b / (2* Wing.num_Blade);                             % [m]
+Wing.r = Wing.dr / 2 : Wing.dr : (Wing.b - Wing.dr) / 2;            % [m]
+Wing.c = BE_Chord_Length(Wing.r, Wing.num_Blade);                   % [m]
+Wing.dS = Wing.dr .* Wing.c;                                        % [m^2]
+Wing.MAC = sum(Wing.c .* Wing.dS) / sum(Wing.dS);                   % [m]
+Wing.Position = [113.5; 0; 43.483];                                 % [mm]
+Wing.l = (Drone.CG - Wing.Position - [350* 0.25;0 ; 0]) / 1000;     % [m]
 
 %% tail
 Tail.alpha_mount_degree = -18;              % [˚]

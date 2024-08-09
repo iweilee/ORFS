@@ -6,16 +6,15 @@
 %  specifications and parameters, aerodynamic coefficients,
 %  simulation parameters, simulation, and post processing.
 
-% clear
-% clc
+clear
+clc
 
 %% folders
-% addpath(genpath("MATLAB_Script"));
-% addpath("Simulink_Block");
-% % TODO: move simulink cahce to cache folder
-% if ~isfolder("Simulink_Cache")
-%     mkdir Simulink_Cache
-% end
+addpath(genpath("MATLAB_Script"));
+addpath("Simulink_Block");
+if ~isfolder("Simulink_Cache")
+    mkdir Simulink_Cache
+end
 
 %% heading
 ORFS_License;
@@ -83,10 +82,10 @@ X_0 = [5.5; 0; 1.5;  % [m/s m/s m/s]
 u_0 = [deg2rad(0); deg2rad(0); 1]; % [rad; rad; -]
 
 %% simulink
-% load_system("ORFS_Model.slx");
- 
-% out = sim("ORFS_Model.slx");
+load_system("ORFS_Model.slx");
+
+out = sim("ORFS_Model.slx");
 
 %% post processing
-% Post_Processing(out, nu, Wing);
+Post_Processing(out, nu, Wing);
 

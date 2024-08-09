@@ -9,7 +9,6 @@ clc
 %% folders
 addpath(genpath("MATLAB_Script"));
 addpath("Simulink_Block");
-% TODO: move simulink cahce to cache folder
 if ~isfolder("Simulink_Cache")
     mkdir Simulink_Cache
 end
